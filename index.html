@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Lashang Portfolio</title>
+    <title>Lashang Tamang - Frontend Developer Portfolio | HTML, CSS, JavaScript, React</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Lashang Tamang - Junior Frontend Developer specializing in HTML, CSS, JavaScript, and React. View my portfolio, projects, and professional experience in web development.">
+    <meta name="keywords" content="frontend developer, web developer, HTML, CSS, JavaScript, React, portfolio, Nepal, Kathmandu, junior developer">
+    <meta name="author" content="Lashang Tamang">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Lashang Tamang - Frontend Developer Portfolio">
+    <meta property="og:description" content="Junior Frontend Developer specializing in HTML, CSS, JavaScript, and React. View my portfolio and projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="images/back_ground.jpeg">
+    <meta property="og:site_name" content="Lashang Tamang Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lashang Tamang - Frontend Developer Portfolio">
+    <meta name="twitter:description" content="Junior Frontend Developer specializing in HTML, CSS, JavaScript, and React.">
+    <meta name="twitter:image" content="images/back_ground.jpeg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-domain.com">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -23,7 +49,38 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" type="image/jpeg" href="back_ground.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/back_ground.jpeg">
+    <link rel="apple-touch-icon" href="images/back_ground.jpeg">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lashang Tamang",
+      "jobTitle": "Junior Frontend Developer",
+      "description": "Frontend developer specializing in HTML, CSS, JavaScript, and React",
+      "url": "https://your-domain.com",
+      "image": "images/back_ground.jpeg",
+      "sameAs": [
+        "https://www.linkedin.com/in/lashang-tamang-415605320/",
+        "https://github.com/Lashang554",
+        "https://www.facebook.com/lasang.tamang.50702/",
+        "https://www.instagram.com/lasang.tamang554/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "Nepal"
+      },
+      "knowsAbout": ["HTML5", "CSS3", "JavaScript", "React.js", "Frontend Development", "Web Development"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Shree Shanti Bhagwati School"
+      }
+    }
+    </script>
 
 
 
@@ -114,6 +171,87 @@
   transform: scale(1.1);
 }
 
+/* Custom height for background image */
+.js-fullheight {
+  height: 95vh !important; /* Reduce from 100vh to 70vh */
+}
+
+/* Enhanced hover effects for all buttons and social links */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::after {
+  left: 100%;
+}
+
+/* Social media icons hover effect */
+.ftco-footer-social a {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+}
+
+.ftco-footer-social a:hover {
+  transform: translateY(-5px) rotate(5deg);
+}
+
+.ftco-footer-social a span {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.ftco-footer-social a:hover span {
+  color: #ffbd39 !important;
+  transform: scale(1.2);
+}
+
+/* Special hover for white outline buttons */
+.btn-white.btn-outline-white:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Pulse animation for download CV button */
+.btn-primary[download]:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: translateY(-3px) scale(1.02); }
+  50% { transform: translateY(-3px) scale(1.05); }
+  100% { transform: translateY(-3px) scale(1.02); }
+}
+
+/* Bounce effect for GitHub button */
+.btn-primary[href*="github.com"]:hover {
+  animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(-3px) scale(1.02); }
+  40% { transform: translateY(-8px) scale(1.05); }
+  60% { transform: translateY(-5px) scale(1.03); }
+}
 
 </style>
 
@@ -122,41 +260,41 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
 	
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" role="navigation" aria-label="Main navigation">
 	  <div class="container">
-      <a class="navbar-brand" href="index.html">Lashang Tamang</a>
+      <a class="navbar-brand" href="index.html" aria-label="Lashang Tamang - Home">Lashang Tamang</a>
       
-		<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-		  <span class="oi oi-menu"></span> Menu
+		<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+		  <span class="oi oi-menu" aria-hidden="true"></span> <span>Menu</span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="ftco-nav">
-		  <ul class="navbar-nav nav ml-auto">
-			<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-			<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-			<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-			<!-- <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li> -->
-			<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+		  <ul class="navbar-nav nav ml-auto" role="menubar">
+			<li class="nav-item" role="none"><a href="#home-section" class="nav-link" role="menuitem"><span>Home</span></a></li>
+			<li class="nav-item" role="none"><a href="#about-section" class="nav-link" role="menuitem"><span>About</span></a></li>
+			<li class="nav-item" role="none"><a href="#resume-section" class="nav-link" role="menuitem"><span>Resume</span></a></li>
+			<!-- <li class="nav-item" role="none"><a href="#project-section" class="nav-link" role="menuitem"><span>Projects</span></a></li> -->
+			<li class="nav-item" role="none"><a href="#contact-section" class="nav-link" role="menuitem"><span>Contact</span></a></li>
 		  </ul>
 		</div>
 	  </div>
 	</nav>
-	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-		 <div class="slider-item ">
-			<div class="overlay"></div>
+	<section id="home-section" class="hero" role="banner" aria-labelledby="hero-heading">
+		<div class="home-slider owl-carousel">
+		 <div class="slider-item">
+			<div class="overlay" aria-hidden="true"></div>
 		   <div class="container">
 			<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-				<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/back_ground.jpeg);">
-				 <div class="overlay"></div>
+				<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/back_ground.jpeg);" role="img" aria-label="Lashang Tamang professional headshot">
+				 <div class="overlay" aria-hidden="true"></div>
 				</div>
-				<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+				<div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 					<div class="text">
-						<span class="subheading">Hello!</span>
+						<span class="subheading" id="hero-heading">Hello!</span>
 					  <h1 class="mb-4 mt-3">I'm <span>Lashang Tamang</span></h1>
 
 					  <!-- Element to contain animated typing -->
-					  <span id="typing-animation"></span>
+					  <span id="typing-animation" aria-live="polite" aria-label="Current role: Junior Frontend Developer"></span>
 
 					  <script>
 
@@ -196,8 +334,8 @@
 					  <!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
 					  <!-- <br> -->
 					  <p>
-						<a href="https://www.facebook.com/lasang.tamang.50702/" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-4">Facebook</a> 
-						<a href="https://github.com/Lashang554" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+						<a href="https://www.facebook.com/lasang.tamang.50702/" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-4" aria-label="Visit Lashang Tamang's Facebook profile">Facebook</a> 
+						<a href="https://github.com/Lashang554" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4" aria-label="View Lashang Tamang's GitHub projects">My works</a>
 					  </p>
 					  
 				  </div>
@@ -209,17 +347,17 @@
   </section>
 
 
-  <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+  <section class="ftco-about img ftco-section ftco-no-pb" id="about-section" role="region" aria-labelledby="about-heading">
     <div class="container">
         <div class="row">
             <div class="row d-flex align-items-stretch">
                 <div class="col-md-6 col-lg-5 d-flex">
                     <div class="img-about img d-flex align-items-stretch">
-                        <div class="overlay">
+                        <div class="overlay" aria-hidden="true">
                             <div class="row">
                                 <div class="col-sm-6 col-md-5">
                                     <div class="about-img">
-                                        <img src="images/about_me.jpeg" class="img-fluid rounded b-shadow-a" alt="">
+                                        <img src="images/about_me.jpeg" class="img-fluid rounded b-shadow-a" alt="Lashang Tamang professional photo" loading="lazy">
                                     </div>
                                 </div>
                                 <!-- Details next to profile image -->
@@ -274,7 +412,7 @@
                 <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
                     <div class="row justify-content-start pb-3">
                         <div class="col-md-12 heading-section ftco-animate">
-                            <h1 class="big">About</h1>
+                            <h1 class="big" id="about-heading">About</h1>
                             <h2 class="mb-4">About Me</h2>
                             
                             <p>Hi! I’m Lhasang, a motivated and detail-oriented frontend developer in training. I have a strong desire to grow in the tech field and a background in leadership and volunteer work. I’m passionate about creating clean, responsive, and user-friendly websites. My journey is fueled by curiosity, creativity, and continuous learning..</p>
@@ -305,11 +443,11 @@
     </div>
 </section>
 	
-<section class="ftco-section ftco-no-pb" id="resume-section">
+<section class="ftco-section ftco-no-pb" id="resume-section" role="region" aria-labelledby="resume-heading">
     <div class="container">
         <div class="row justify-content-center pb-5">
             <div class="col-md-10 heading-section text-center ftco-animate">
-                <h1 class="big big-2">Resume</h1>
+                <h1 class="big big-2" id="resume-heading">Resume</h1>
                 <h2 class="mb-4">Resume</h2>
                 <p>Enthusiastic and motivated student with a strong passion for learning, photography, and personal development. Committed to gaining real-world experience and developing skills in various domains.</p>
             </div>
@@ -395,41 +533,41 @@
 
 
 
-   
 
-    <!-- <section class="ftco-section" id="project-section">
+
+    <section class="ftco-section" id="project-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Projects</h1>
             <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample Data Analytics projects on SQL, Python, Power BI & ML.</p>
+            <p>Below are the projects I have worked on.</p>
           </div>
         </div>
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
+              <a href="https://github.com/Lashang554/Digital-clock" class="block-20 zoom-effect" style="background-image: url('images/clock-1.jpg');">
               </a>
               <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql">Digital Music Store Data Analysis using SQL</a></h3>
-                <p>Analyzed music store data using advanced SQL queires to identify gaps and increase the business growth.</p>
+                <h3 class="heading"><a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql">Digital Clock</a></h3>
+                <p>A real-time digital clock built with HTML, CSS, and JavaScript, featuring a clean design and live updates every second.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              <a href="https://github.com/Lashang554/calculator-project" class="block-20 zoom-effect" style="background-image: url('images/calculator.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb">Data Analysis using Python Project for Beginners</a></h3>
-                <p>Performed exploratory data analysis on diwali sales data using Python to improve the customer experience.</p>
+                <h3 class="heading"><a href="https://github.com/Lashang554/calculator-project">Calculator </a></h3>
+                <p>A simple calculator built with HTML, CSS, and JavaScript, featuring basic arithmetic operations.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
+          <!-- <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
               <a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
               </a>
@@ -439,11 +577,11 @@
                 <p>Designed a power bi dashboard for Madhav Store to track and analyze the online sales data acorss India.</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 	<br>
 		
-		<div class="row d-flex justify-content-center">  
+		<!-- <div class="row d-flex justify-content-center">  
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
 				<a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
@@ -467,7 +605,7 @@
 			  </div>
 			</div>
 		 </div>
-	  </div>
+	  </div> -->
     </section>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
@@ -476,32 +614,32 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Achievements</span>
+                <strong class="number" data-number="10">0</strong>
+                <span>personal projects</span>
               </div>
             </div>
           </div>
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="30">0</strong>
-                <span>Projects</span>
+                <strong class="number" data-number="7">0</strong>
+                <span>skills learned</span>
               </div>
             </div>
           </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+          <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
                 <strong class="number" data-number="1000">0</strong>
                 <span>Mentored Students</span>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
+                <strong class="number" data-number="5000">0</strong>
+                <span>Learning hours</span>
               </div>
             </div>
           </div>
@@ -515,21 +653,21 @@
 						<h2>More projects on<span> Github  </span> </h2>
 						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
 						<br>
-						<p><a href="https://github.com/rishabhnmishra" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						<p><a href="https://github.com/" class="btn btn-primary py-3 px-5">GitHub</a></p>
 						</div>
 					</div>
 				</div>
 			
-		</div>
-	</section> -->
+		</div> 
+	</section> 
 
 
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section" role="region" aria-labelledby="contact-heading">
 		<div class="container">
 		  <div class="row justify-content-center mb-5 pb-3">
 			<div class="col-md-7 heading-section text-center ftco-animate">
-			  <h1 class="big big-2">Contact</h1>
+			  <h1 class="big big-2" id="contact-heading">Contact</h1>
 			  <h2 class="mb-4">Contact Me</h2>
 			  <p>Below are the details to reach out to me!</p>
 			</div>
@@ -540,7 +678,7 @@
 			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 			  <div class="align-self-stretch box p-4 text-center h-100">
 				<div class="icon d-flex align-items-center justify-content-center">
-				  <span class="icon-map-signs"></span>
+				  <span class="icon-map-signs" aria-hidden="true"></span>
 				</div>
 				<h3 class="mb-4">Temporary Address</h3>
 				<p>Kathmandu, Nepal</p>
@@ -551,10 +689,10 @@
 			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 			  <div class="align-self-stretch box p-4 text-center h-100">
 				<div class="icon d-flex align-items-center justify-content-center">
-				  <span class="icon-phone2"></span>
+				  <span class="icon-phone2" aria-hidden="true"></span>
 				</div>
 				<h3 class="mb-4">Contact Number</h3>
-				<p><a href="tel:9860998818">9860998818</a></p>
+				<p><a href="tel:+9779860998818" aria-label="Call Lashang Tamang at 9860998818">+977 9860998818</a></p>
 			  </div>
 			</div>
 	  
@@ -562,10 +700,10 @@
 			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 			  <div class="align-self-stretch box p-4 text-center h-100">
 				<div class="icon d-flex align-items-center justify-content-center">
-				  <span class="icon-paper-plane"></span>
+				  <span class="icon-paper-plane" aria-hidden="true"></span>
 				</div>
 				<h3 class="mb-4">Email Address</h3>
-				<p><a href="mailto:lasanglama554@gmail.com">lasanglama554@gmail.com</a></p>
+				<p><a href="mailto:lasanglama554@gmail.com" aria-label="Send email to Lashang Tamang">lasanglama554@gmail.com</a></p>
 			  </div>
 			</div>
 	  
@@ -573,7 +711,7 @@
 			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 			  <div class="align-self-stretch box p-4 text-center h-100">
 				<div class="icon d-flex align-items-center justify-content-center">
-				  <span class="icon-map-marker"></span>
+				  <span class="icon-map-marker" aria-hidden="true"></span>
 				</div>
 				<h3 class="mb-4">Permanent Address</h3>
 				<p>Letang, Morang</p>
@@ -595,11 +733,11 @@
       <br>
       <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
         <li class="ftco-animate normal-txt">Find me on</li>
-        <li class="ftco-animate"><a href="#" target="_blank" rel="noopener noreferrer"><span class="icon-youtube"></span></a></li>
-        <li class="ftco-animate"><a href="https://www.linkedin.com/in/lashang-tamang-415605320/" target="_blank" rel="noopener noreferrer"><span class="icon-linkedin"></span></a></li>  
-        <li class="ftco-animate"><a href="#" target="_blank" rel="noopener noreferrer"><span class="icon-twitter"></span></a></li>
-        <li class="ftco-animate"><a href="https://www.facebook.com/lasang.tamang.50702/" target="_blank" rel="noopener noreferrer"><span class="icon-facebook"></span></a></li>
-        <li class="ftco-animate"><a href="https://www.instagram.com/lasang.tamang554/?hl=en" target="_blank" rel="noopener noreferrer"><span class="icon-instagram"></span></a></li>
+        <li class="ftco-animate"><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit Lashang Tamang's YouTube channel"><span class="icon-youtube" aria-hidden="true"></span></a></li>
+        <li class="ftco-animate"><a href="https://www.linkedin.com/in/lashang-tamang-415605320/" target="_blank" rel="noopener noreferrer" aria-label="Visit Lashang Tamang's LinkedIn profile"><span class="icon-linkedin" aria-hidden="true"></span></a></li>  
+        <li class="ftco-animate"><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit Lashang Tamang's Twitter profile"><span class="icon-twitter" aria-hidden="true"></span></a></li>
+        <li class="ftco-animate"><a href="https://www.facebook.com/lasang.tamang.50702/" target="_blank" rel="noopener noreferrer" aria-label="Visit Lashang Tamang's Facebook profile"><span class="icon-facebook" aria-hidden="true"></span></a></li>
+        <li class="ftco-animate"><a href="https://www.instagram.com/lasang.tamang554/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Lashang Tamang's Instagram profile"><span class="icon-instagram" aria-hidden="true"></span></a></li>
       </ul>
       <br>
       
@@ -611,13 +749,13 @@
 
  
 	
-    <footer class="ftco-footer ftco-section">
+    <footer class="ftco-footer ftco-section" role="contentinfo">
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-12 text-center">
   
 			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          © 2025 Lashang Tamang &copy;<script>document.write(new Date().getFullYear());</script> | All rights reserved | Made with  <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">creativity</a>
+          © 2025 Lashang Tamang &copy;<script>document.write(new Date().getFullYear());</script> | All rights reserved | Made with  <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">creativity</a>
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 			</div>
 		  </div>
