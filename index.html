@@ -473,6 +473,38 @@ section {
   transition: all 0.3s ease;
 }
 
+/* Toggle button icons */
+.navbar-toggler .menu-icon,
+.navbar-toggler .close-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  padding-right: 10px;
+}
+.menu-icon{
+  margin-left: 2px;
+}
+.navbar-toggler .close-icon {
+  display: none;
+  color: #fff !important;
+}
+
+/* Show close icon when menu is open */
+.navbar-toggler.active .menu-icon {
+  display: none !important;
+}
+
+.navbar-toggler.active .close-icon {
+  display: inline-block !important;
+}
+
+/* Improve toggle button appearance */
+.navbar-toggler {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
 .navbar-toggler:hover {
   border-color: #ffbd39;
   transform: scale(1.05);
@@ -515,6 +547,43 @@ section {
   }
 }
 
+/* Mobile Navigation Styles */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95);
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffbd39 !important;
+  }
+
+  /* Ensure toggle button is visible */
+  .navbar-toggler {
+    display: block !important;
+  }
+}
+
+/* Hide toggle button on larger screens */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+/* Reduce typing animation text size */
+#typing-animation {
+  font-size: 1.5rem;
+}
+
 
 
 </style>
@@ -529,7 +598,8 @@ section {
       <a class="navbar-brand" href="index.html" aria-label="Lashang Tamang - Home">Lashang Tamang</a>
       
 		<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation menu">
-		  <span class="oi oi-menu" aria-hidden="true"></span> <span>Menu</span>
+		  <span class="menu-icon"><i class="oi oi-menu"></i></span>
+		  <span class="close-icon d-none"><i class="oi oi-x"></i></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="ftco-nav">
