@@ -215,7 +215,7 @@
 					  {
 					    number: num,
 					    numberStep: plus_separator_step
-					  }, 7000
+					  }, 2000
 					);
 				});
 				
