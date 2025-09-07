@@ -196,7 +196,17 @@
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
 
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
+				var plus_separator_step = function(now, tween) {
+					var flooredNumber = Math.floor(now);
+					var formattedNumber = flooredNumber.toString();
+					
+					// Add comma separator for numbers >= 1000
+					if (flooredNumber >= 1000) {
+						formattedNumber = flooredNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+					
+					$(tween.elem).text('+' + formattedNumber);
+				};
 				$('.number').each(function(){
 					var $this = $(this),
 						num = $this.data('number');
@@ -204,7 +214,7 @@
 					$this.animateNumber(
 					  {
 					    number: num,
-					    numberStep: comma_separator_number_step
+					    numberStep: plus_separator_step
 					  }, 7000
 					);
 				});
