@@ -294,6 +294,40 @@
     fixedContentPos: false
   });
 
+  // CV download: force download where supported, fallback to opening PDF
+  $('#download-cv').on('click', function(e) {
+    var $link = $(this);
+    var url = $link.attr('href');
+    var filename = $link.attr('download') || 'Lashang_Updated_CV.pdf';
+
+    // If fetch isn't available, let the browser handle it (download/open)
+    if (!window.fetch || !window.URL || !window.URL.createObjectURL) return;
+
+    e.preventDefault();
+
+    fetch(url, { cache: 'no-store' })
+      .then(function(res) {
+        if (!res.ok) throw new Error('download_failed');
+        return res.blob();
+      })
+      .then(function(blob) {
+        var objectUrl = window.URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = objectUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(function() {
+          window.URL.revokeObjectURL(objectUrl);
+        }, 1000);
+      })
+      .catch(function() {
+        // Some browsers (notably iOS Safari) may block forced downloads
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+  });
+
 
 
 
